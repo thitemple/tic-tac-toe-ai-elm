@@ -1,32 +1,15 @@
 module Main exposing (..)
 
-import Html exposing (..)
-
-
-type alias Model =
-    String
+import Html exposing (program)
+import Models exposing (Model)
+import Msgs exposing (Msg)
+import View exposing (view)
+import Update exposing (update)
 
 
 init : ( Model, Cmd Msg )
 init =
     ( "Tic Tac Toe", Cmd.none )
-
-
-type Msg
-    = NoOp
-
-
-view : Model -> Html Msg
-view model =
-    div []
-        [ text model ]
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        NoOp ->
-            ( model, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
