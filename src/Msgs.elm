@@ -2,4 +2,7 @@ module Msgs exposing (..)
 
 
 type Msg
-    = NoOp
+    = NewGame
+    | SelectPosition
+    | AskAiMove
+    | AiMove
