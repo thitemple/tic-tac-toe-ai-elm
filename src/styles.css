@@ -1,0 +1,24 @@
+.ttt-main-container {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.ttt-new-game {
+    margin: 10px 0;
+}
+
+button > i {
+    margin-right: 10px;
+}
+
+.ttt-score {
+    letter-spacing: 5px;
+}
+
+.ttt-score > i:first-of-type {
+    margin-right: 10px;
+}
+
+.ttt-score > i:last-of-type {
+    margin-left: 10px;
+}
