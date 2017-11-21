@@ -1,4 +1,4 @@
-module Models exposing (..)
+module Model exposing (..)
 
 
 type alias Score =

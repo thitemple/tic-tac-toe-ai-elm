@@ -1,10 +1,11 @@
 module View exposing (..)
 
-import Models exposing (Model, Score)
+import Model exposing (Model, Score)
 import Msgs exposing (Msg)
 import Html exposing (..)
 import Html.Attributes exposing (class, id, width, height)
 import Html.Events exposing (onClick)
+import Canvas exposing (renderBox)
 
 
 view : Model -> Html Msg
@@ -19,12 +20,7 @@ view model =
 gameCanvas : Model -> Html Msg
 gameCanvas model =
     div []
-        [ canvas
-            [ id "myCanvas"
-            , width 200
-            , height 200
-            ]
-            []
+        [ renderBox 200
         ]
 
 

@@ -1,7 +1,7 @@
 module Update exposing (..)
 
 import Msgs exposing (Msg(..))
-import Models exposing (Model, initialModel)
+import Model exposing (Model, initialModel)
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
