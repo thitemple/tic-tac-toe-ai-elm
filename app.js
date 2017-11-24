@@ -11839,34 +11839,32 @@ var _user$project$Canvas$drawBase = function (x) {
 		A3(_elm_lang$core$Color$rgb, 17, 17, 17),
 		A2(_evancz$elm_graphics$Collage$rect, x, x));
 };
-var _user$project$Canvas$drawFrame = function (lines) {
-	return A2(
-		_elm_lang$core$List$map,
-		function (_p0) {
-			var _p1 = _p0;
-			return A2(
-				_evancz$elm_graphics$Collage$move,
-				{ctor: '_Tuple2', _0: _p1._2, _1: _p1._3},
-				A2(
-					_evancz$elm_graphics$Collage$filled,
-					_elm_lang$core$Color$lightPurple,
-					A2(_evancz$elm_graphics$Collage$rect, _p1._0, _p1._1)));
-		},
-		lines);
-};
+var _user$project$Canvas$drawFrame = _elm_lang$core$List$map(
+	function (_p0) {
+		var _p1 = _p0;
+		return A2(
+			_evancz$elm_graphics$Collage$move,
+			{ctor: '_Tuple2', _0: _p1._2, _1: _p1._3},
+			A2(
+				_evancz$elm_graphics$Collage$filled,
+				_elm_lang$core$Color$lightPurple,
+				A2(_evancz$elm_graphics$Collage$rect, _p1._0, _p1._1)));
+	});
 var _user$project$Canvas$lines = function (size) {
+	var lineWidth = 5;
+	var diff = (size / 2) - (size / 3);
 	return {
 		ctor: '::',
-		_0: {ctor: '_Tuple4', _0: size, _1: 5, _2: 0, _3: 30},
+		_0: {ctor: '_Tuple4', _0: size, _1: lineWidth, _2: 0, _3: diff},
 		_1: {
 			ctor: '::',
-			_0: {ctor: '_Tuple4', _0: size, _1: 5, _2: 0, _3: -30},
+			_0: {ctor: '_Tuple4', _0: size, _1: lineWidth, _2: 0, _3: 0 - diff},
 			_1: {
 				ctor: '::',
-				_0: {ctor: '_Tuple4', _0: 5, _1: size, _2: -30, _3: 0},
+				_0: {ctor: '_Tuple4', _0: lineWidth, _1: size, _2: 0 - diff, _3: 0},
 				_1: {
 					ctor: '::',
-					_0: {ctor: '_Tuple4', _0: 5, _1: size, _2: 30, _3: 0},
+					_0: {ctor: '_Tuple4', _0: lineWidth, _1: size, _2: diff, _3: 0},
 					_1: {ctor: '[]'}
 				}
 			}
