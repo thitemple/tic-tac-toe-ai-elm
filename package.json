@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && rm app.js && rm index.html && cp dist/index.html . && cp dist/app.js .",
     "client": "webpack-dev-server --port 3000",
     "start": "npm run client"
   },
