@@ -8,17 +8,25 @@ import Color
 
 lines : Float -> List ( Float, Float, Float, Float )
 lines size =
-    [ ( size, 5, 0, 30 )
-    , ( size, 5, 0, -30 )
-    , ( 5, size, -30, 0 )
-    , ( 5, size, 30, 0 )
-    ]
+    let
+        diff =
+            (size / 2) - (size / 3)
+    in
+        [ ( size, 5, 0, diff )
+        , ( size, 5, 0, -diff )
+        , ( 5, size, -diff, 0 )
+        , ( 5, size, diff, 0 )
+        ]
 
 
 drawFrame : List ( Float, Float, Float, Float ) -> List Form
-drawFrame lines =
-    lines
-        |> List.map (\( x, y, left, top ) -> rect x y |> filled Color.lightPurple |> move ( left, top ))
+drawFrame =
+    List.map
+        (\( x, y, left, top ) ->
+            rect x y
+                |> filled Color.lightPurple
+                |> move ( left, top )
+        )
 
 
 drawBase : Float -> Form
