@@ -11,11 +11,14 @@ lines size =
     let
         diff =
             (size / 2) - (size / 3)
+
+        lineWidth =
+            5
     in
-        [ ( size, 5, 0, diff )
-        , ( size, 5, 0, -diff )
-        , ( 5, size, -diff, 0 )
-        , ( 5, size, diff, 0 )
+        [ ( size, lineWidth, 0, diff )
+        , ( size, lineWidth, 0, -diff )
+        , ( lineWidth, size, -diff, 0 )
+        , ( lineWidth, size, diff, 0 )
         ]
 
 
