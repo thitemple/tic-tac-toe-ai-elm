@@ -1,11 +1,11 @@
 module View exposing (..)
 
+import Canvas exposing (renderBox)
+import Html exposing (..)
+import Html.Attributes exposing (class, height, id, width)
+import Html.Events exposing (onClick)
 import Model exposing (Model, Score)
 import Msgs exposing (Msg)
-import Html exposing (..)
-import Html.Attributes exposing (class, id, width, height)
-import Html.Events exposing (onClick)
-import Canvas exposing (renderBox)
 
 
 view : Model -> Html Msg

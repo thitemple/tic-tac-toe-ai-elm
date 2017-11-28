@@ -1,9 +1,9 @@
 module Canvas exposing (renderBox)
 
-import Collage exposing (filled, rect, collage, Form, move)
+import Collage exposing (Form, collage, filled, move, rect)
+import Color
 import Element exposing (toHtml)
 import Html exposing (..)
-import Color
 
 
 lines : Float -> List ( Float, Float, Float, Float )
@@ -13,13 +13,13 @@ lines size =
             (size / 2) - (size / 3)
 
         lineWidth =
-            5
+            2
     in
-        [ ( size, lineWidth, 0, diff )
-        , ( size, lineWidth, 0, -diff )
-        , ( lineWidth, size, -diff, 0 )
-        , ( lineWidth, size, diff, 0 )
-        ]
+    [ ( size, lineWidth, 0, diff )
+    , ( size, lineWidth, 0, -diff )
+    , ( lineWidth, size, -diff, 0 )
+    , ( lineWidth, size, diff, 0 )
+    ]
 
 
 drawFrame : List ( Float, Float, Float, Float ) -> List Form
@@ -44,5 +44,5 @@ renderBox size =
         forms =
             [ drawBase (toFloat size) ] ++ drawFrame (lines (toFloat size))
     in
-        collage size size forms
-            |> toHtml
+    collage size size forms
+        |> toHtml
